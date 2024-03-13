@@ -1,0 +1,128 @@
+
+* wumpus.lisp
+*** direct-edges
+*** get-connected
+*** find-islands
+*** connect-with-bridges
+*** connect-all-islands
+
+* functions
+*** labels
+その場しのぎの関数を定義
+
+* 基本を抑えよう
+- [6/6] direct-edges
+  - [X] remove-if-not
+    条件に合わないものを削除
+    (remove-if-not #'oddp '(1 2 3 4 5))
+  - [X] lambda
+    関数と使い方は同じ
+    名前をつけたり定義しなくていい
+    (関数名 3)
+    ((lambda .....) 3)
+  - [X] eql
+    数値、文字の比較
+  - [X] node
+    入力
+  - [X] edge-list
+    入力
+  - [X] #'
+    関数参照
+    例: (mapcar #'oddp '(1 2 3 4))
+
+- [8/8] get-connected
+
+  - [X] let
+    ローカル変数の定義に使う
+     (let ((x 1) (y 2) (z 3)) (+ x y z)) => 6
+     (let* ((x 1) (y (+ x 1)) (z (+ y 1))) (+ x y z)) => 6
+
+  - [X] visited
+    nilにされているレキシカル変数のなまえ
+
+  - [X] labels
+    レキシカル変数?
+    (labels ((inc (x) (1+ x)))
+          (inc 3))
+
+  - [X] traverse
+    labelsの中で作られた関数名
+
+  - [X] unless
+    条件が偽のとき実行
+
+  - [X] member
+    (member 2 '(1 2 3)) =>  (2 3)
+
+  - [X] push
+    (let ((x '(3 2 1))) (push 4 x) x)
+
+  - [X] mapc
+    副作用しか使わない時?に使う
+    (mapc (lambda (x)
+    (format t "This list has ~A~%" x))
+       '(1 2 3 4))
+
+
+- [2/2] find-islands
+
+  - [X] set-difference
+    二つのリストをとり、最初のリストにあるが二個目のリストには含まれない要素をリストにして返す関数
+    (set-difference '(0 2 4 6 8 10) '(0 3 6 9 12))
+
+  - [X] when
+    条件が真のとき実行
+
+
+- [1/1] connect-with-bridges
+
+  - [X] append
+    リストを全て繋げる関数
+    (append '(a b c) '(d e f) '() '(g))
+
+
+
+- [0/0] connect-all-islands
+
+
+- [5/5] make-city-edges
+
+  - [X] let*
+    let*は初期化を連続して行う
+    自分の中でも使える?
+    同時に定義される変数が参照できる
+    (let* ((a 5)
+		(b (+ a 2)))
+	   b)
+
+  - [X] collect
+    S 式の評価結果をリストに格納して返す場合
+    (loop for x from 1 to 5 collect (* x x))
+
+  - [X] remove-if-not
+    条件に合わないものを削除
+    (remove-if-not #'oddp '(1 2 3 4 5))
+
+  - [X] random
+    (dotimes (x 5) (print (random 100)))
+
+  - [X] zerop
+    (zerop 0)
+
+
+- [1/1] edges-to-alist
+
+  - [X] remove-deplicates
+    重複を削除
+    (remove-duplicates '(a b c b d d e))
+    
+    (remove-deplicates (direct-edges node1 edge-list)
+					     :test #'equal)
+    デフォルトは、eqlだけど、ここではテスト関数としてequalを使っている
+
+
+- [0/2] add-cops
+
+  - [ ] intersection
+    二つのリストで共有されている要素を求める
+    AかつB

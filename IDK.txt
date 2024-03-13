@@ -1,0 +1,17 @@
+assoc
+cdr
+car
+let
+append
+mapcar
+labels
+progn
+complement
+alphanumericp
+substitute-if
+digit-char-p
+mapc
+princ
+3ed91a665cce9
+
+https://payment.sej.co.jp/od/hi.asp?00238250739039432d111cbd9981dc9b

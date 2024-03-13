@@ -1,0 +1,25 @@
+
+* wumpus.lisp
+*** direct-edges
+*** get-connected
+*** find-islands
+*** connect-with-bridges
+*** connect-all-islands
+
+* functions
+*** labels
+その場しのぎの関数を定義
+
+* 基本を抑えよう
+- [ ] direct-edges
+  - [ ] remove-if-not
+    条件に合わないものを削除
+  - [ ] lambda
+  - [ ] eql
+  - [ ] node
+    入力
+  - [ ] edge-list
+    入力
+  - [ ] #'
+    関数参照
+    例: (mapcar #'oddp '(1 2 3 4))

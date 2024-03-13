@@ -1,0 +1,75 @@
+* [22/22]dice
+
+** DONE board-array (lst)
+リストで表現されたゲーム盤を配列に変える
+
+
+** DONE gen-board ()
+六角形ごとにランダムなプレイヤーとダイスの数を決める
+collectでリストで返されるので、board-arrayで配列にする
+
+
+** DONE player-letter (n)
+プレイヤーの名前を数字では分かりにくいので、ASCIIコードを使ってアルファベットに直す
+
+
+** DONE draw-board (board)
+boardの状態を受け取って、斜めに並べて表示する
+*board-size* - y の回数だけ空白
+
+
+** DONE game-tree (board player spare-dice first-move)
+与えられた初期条件から全ての可能な指し手を表現する機構造を作る
+ゲームの最初に一度だけ呼ばれる
+リストにする
+player
+board
+
+spare-diceとは?
+- 現在の手番でプレイヤーがいくつサイコロを獲得したか？補給を計算するために必要
+
+
+** DONE add-passing-move
+相手に手番を渡す
+自分の手番を終了
+可能な指し手がmovesに渡される
+補給された後の盤面
+手番のプレイヤー
+獲得したサイコロ0
+指し手は相手に渡すのでまだやってないことにするためにtにして渡す
+
+
+** DONE attacking-moves
+
+** DONE neighbors
+
+** DONE board-attack
+
+** DONE add-new-dice
+
+** DONE play-vs-human
+
+** DONE print-info
+
+** DONE handle-human
+
+** DONE winners
+
+** DONE announce-winner
+
+** DONE rate-position
+ゲーム木のある節での点数を計算
+
+** DONE get-rationgs
+各指手の点数を求めて(rate-positionを使って)リストに
+
+** DONE handle-computer
+可能な刺してそれぞれに対する点数を計算し＼最も高い点数をもつ指手に対応するゲーム木を返す
+
+** DONE play-vs-computer
+
+** DONE old-neighbors
+
+** DONE old-game-tree
+
+** DONE old-rate-position
